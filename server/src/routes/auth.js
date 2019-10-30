@@ -29,16 +29,17 @@ router.post(
 		check('username', 'Please include a valid username')
 			.not()
 			.isEmpty(),
-		check(
-			'password',
-			'The password must have a minimum of 6 characters'
-		).isLength({ min: 6 })
+		check('password', 'The password is required')
+			.not()
+			.isEmpty()
 	],
 	async (req, res) => {
 		const errors = validationResult(req)
 		if (!errors.isEmpty()) {
 			return res.status(400).json({
-				errors: errors.array()
+				error: {
+					msg: 'Creditials are incorrect'
+				}
 			})
 		}
 

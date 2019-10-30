@@ -1,12 +1,10 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const path = require('path')
+const app = express()
 
-// Serve the static files from the build folder
-app.use(express.static(__dirname + '/build'))
-
-// Redirect all traffic to the index
-app.get('*', function(req, res) {
-	res.sendFile(__dirname + '/build/index.html')
+app.use(express.static(path.join(__dirname, 'build')))
+app.get('/', function(req, res) {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 // Listen to port 3000

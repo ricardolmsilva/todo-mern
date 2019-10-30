@@ -6,7 +6,8 @@ module.exports = {
 			watch: true,
 			env: {
 				MONGO_URI: 'mongodb://mongo:27017/todos',
-				JWT_SECRET: 'secret'
+				JWT_SECRET: 'secret',
+				PORT: 8001
 			}
 		},
 		{
@@ -14,7 +15,10 @@ module.exports = {
 			cwd: './client',
 			script: 'npm',
 			args: 'start',
-			watch: false
+			watch: false,
+			env: {
+				PORT: 8002
+			}
 		}
 	]
 }
