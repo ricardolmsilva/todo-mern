@@ -4,7 +4,7 @@ That is my first projet developed in React and Node while I was studing that tec
 
 To run project make sure you have pm2 installed in your machine. To install it globally run:<br>
 
-### npm i pm2 -g
+### yarn global add pm2
 
 Install all the required dependencies/<br>
 
