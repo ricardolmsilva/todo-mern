@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "prepare": "(cd server && yarn); (cd client && yarn); (cd client && yarn build);"
+  }
+}
